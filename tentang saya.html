@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tentang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tambahkan efek hover untuk kartu pengalaman */
+        .experience-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk hover */
+        }
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .about-bg {
+            background-image: url('https://via.placeholder.com/800x400'); /* Ganti dengan URL gambar latar belakang yang diinginkan */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease; /* Transisi untuk latar belakang */
+        }
+        .about-bg:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* Efek hover pada latar belakang */
+        }
+        h2 {
+            transition: color 0.3s ease; /* Transisi untuk warna teks */
+        }
+        h2:hover {
+            color: #1d4ed8; /* Ubah warna saat hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-500 p-5">
+    <header class="text-center mb-5">
+        <h1 class="text-3xl font-bold">tentang saya</h1>
+    </header>
+
+    <nav class="mb-5">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="tentang saya.html" class="text-blue-500">Tentang Saya</a></li>
+            <li><a href="#personal-experience" class="text-blue-500"></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="about-bg">
+            <h2>Tentang Saya</h2>
+            <div class="tentang-saya">
+                <p>Aku adalah mahasiswa IT yang penuh rasa ingin tahu. Teknologi adalah petualangan tanpa akhir—setiap kode adalah ide, setiap algoritma tantangan, dan setiap program adalah dunia yang kubangun. Aku belajar teknologi sekaligus kesabaran, ketekunan, dan kreativitas.</p>
+                <p>Meski sibuk di dunia IT, aku tetap mengeksplorasi seni, musik, dan psikologi untuk keseimbangan. Aku bermimpi menciptakan inovasi yang membawa perubahan, tapi kini aku menikmati perjalanan ini—setiap kode, proyek kecil, dan kegagalan adalah bagian dari cerita hidupku.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
