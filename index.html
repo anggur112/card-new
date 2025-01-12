@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web | Portofolio</title>
     <style>
+        /* Gaya dasar */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa; /* Warna latar belakang */
+            background-color: 
         }
 
         header {
-            background: #ffc86a; /* Warna biru */
+            background: #ffc86a; 
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
@@ -28,24 +29,37 @@
         }
 
         nav {
-            background: #e99527ba; /* Warna biru gelap */
+            background: #e99527ba; 
             color: #ffffff;
             padding: 10px 0;
+            position: relative;
+            z-index: 10; 
         }
 
-        nav ul {
+        .hamburger {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+            display: none;
+            margin-left: 15px;
+        }
+
+        .nav-links {
             list-style: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
 
-        nav ul li {
-            display: inline;
+        .nav-links li {
             margin: 0 15px;
         }
 
-        nav ul li a {
-            color: #ffffff;
+        .nav-links a {
             text-decoration: none;
+            color: #ffffff;
         }
 
         main {
@@ -55,7 +69,7 @@
         section {
             padding: 20px;
             margin: 20px 0;
-            background: #ffffff; /* Warna putih untuk konten */
+            background: #ffffff; 
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -63,11 +77,40 @@
         footer {
             text-align: center;
             padding: 10px 0;
-            background: #ffd257; /* Warna biru */
+            background: #ffd257; 
             color: #ffffff;
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block; 
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column; 
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: #e99527ba;
+                border-radius: 0 0 5px 5px;
+                padding: 10px;
+                z-index: 100; 
+            }
+
+            .nav-links.active {
+                display: flex; 
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -81,7 +124,8 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="hamburger" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links">
             <li><a href="tentang saya.html">Tentang Saya</a></li>
             <li><a href="pengalaman.html">Pengalaman</a></li>
             <li><a href="pendidikan.html">Pendidikan</a></li>
@@ -93,33 +137,31 @@
         <section id="about">
             <h2>Tentang Saya</h2>
             <div class="tentang-saya">
-                <p>Aku adalah mahasiswa IT yang penuh rasa ingin tahu. Teknologi adalah petualangan tanpa akhir—setiap kode adalah ide, setiap algoritma tantangan, dan setiap program adalah dunia yang kubangun. Aku belajar teknologi sekaligus kesabaran, ketekunan, dan kreativitas.</p>
-                <p>Meski sibuk di dunia IT, aku tetap mengeksplorasi seni, musik, dan psikologi untuk keseimbangan. Aku bermimpi menciptakan inovasi yang membawa perubahan, tapi kini aku menikmati perjalanan ini—setiap kode, proyek kecil, dan kegagalan adalah bagian dari cerita hidupku.</p>
+                <p>Aku adalah mahasiswa IT yang penuh rasa ingin tahu...</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Pengalaman</h2>
+            <div class="pengalaman">
+                <h3>Perjalanan Hidupku: Menciptakan Kebahagiaan Sendiri</h3>
+                <p>Hidupku adalah sebuah perjalanan penuh tantangan...</p>
             </div>
         </section>
     </main>
-    
 
-            </div>
-        </section>
+    <footer>
+        <p>&copy; 2023 Nama Anda. Semua hak dilindungi.</p>
+    </footer>
 
+    <script>
+        // JavaScript untuk interaktivitas hamburger
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-        <section id="experience">
-            <h2>pengalaman</h2>
-            <div class="pengalaman">
-                <h3><div class="experience mt-3">
-                    <h3 class="text-xl font-semibold">Perjalanan Hidupku: Menciptakan Kebahagiaan Sendiri</h3>
-                    <p class="mt-2">Hidupku adalah sebuah perjalanan penuh tantangan, pelajaran, dan transformasi. Sejak kecil, aku telah belajar bahwa dunia ini tidak selalu memberi apa yang kita inginkan. Banyak hal yang datang begitu saja, tanpa pernah kuminta—baik itu kebahagiaan maupun kesedihan. Namun, itulah hidup.</p>
-                    <p class="mt-2">Saat masa remaja, aku mulai memahami bahwa kebahagiaan sejati tidak selalu datang dari orang lain. Ada momen ketika aku bergantung pada orang-orang di sekitarku untuk merasa dicintai, diterima, dan dihargai. Tetapi pada akhirnya, aku menyadari bahwa terlalu bergantung pada orang lain membuatku kehilangan kendali atas diriku sendiri.</p>
-                    <p class="mt-2">Tantangan terbesar dalam hidupku adalah ketika aku harus berdiri sendiri. Ada waktu-waktu di mana aku merasa begitu kosong, bingung, dan kehilangan arah. Saat itulah aku bertanya pada diri sendiri, "Apa sebenarnya yang membuatku bahagia?" Pertanyaan itu menggema dalam pikiranku hingga aku sadar bahwa jawabannya ada di dalam diriku sendiri. Aku harus menciptakan kebahagiaanku, bukan mencarinya pada orang lain.</p>
-                    <p class="mt-2">Sekarang, aku masih berada di tengah proses membangun kehidupan baru. Ini bukan perjalanan yang mudah, tetapi setiap langkahnya sangat bermakna. Aku mulai fokus pada diriku sendiri—mengejar apa yang membuat hatiku berbinar, melakukan hal-hal kecil yang membawa senyuman di wajahku, dan belajar untuk mencintai diriku apa adanya.</p>
-                    <p class="mt-2">Aku percaya bahwa kebahagiaan itu seperti pohon yang kita tanam dan rawat sendiri. Butuh waktu, kesabaran, dan perhatian. Tapi ketika pohon itu mulai tumbuh, ia akan memberikan naungan dan keindahan tanpa perlu meminta dari siapa pun.</p>
-                    <p class="mt-2">Aku belum sampai di tujuan akhirku, tapi aku merasa jauh lebih damai. Hidup adalah proses, dan aku bangga telah memulai perjalanan ini. Kini, aku tak lagi menunggu orang lain untuk membahagiakanku. Aku punya diriku sendiri—dan itu cukup.</p>
-                </div>
-            </div>
-        </section>
-</main>
-
-<footer>
-    <p>&copy; 2023 Nama Anda. Semua hak dilindungi.</p>
-</footer>
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
